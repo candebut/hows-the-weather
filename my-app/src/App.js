@@ -4,7 +4,7 @@ import './App.css';
 
 const api = {
   key: '9dd6ae3c36c8240db1a4de9a799180b6',
-  base: 'https://home.openweathermap.org/data/2.5'
+  base: 'https://api.openweathermap.org/data/2.5/weather?q='
 }
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   const search = evt => {
     if (evt.key === "Enter") {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${api.key}`)
+      fetch(`${api.base}${query}&appid=${api.key}`)
         .then(res => res.json())
         .then(result => {
           setWeather(result);
