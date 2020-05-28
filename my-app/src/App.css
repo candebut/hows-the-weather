@@ -11,14 +11,23 @@ body {
 }
 
 .app {
-  background-image: url('./pictures/cold.jpg');
+  background-image: url('./pictures/normal.jpg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4 ease-out;
 }
 
-.app.warm {
+.app-cold {
+  background-image: url('./pictures/cold.jpg');
+}
+
+.app-warm {
   background-image: url('./pictures/sunny.jpg');
+  background-position: bottom
+}
+
+.app-rainy {
+  background-image: url('./pictures/rainy.png');
 }
 
 main {

@@ -22,7 +22,7 @@ function App() {
           console.log(result);
         });
     }
-  }
+  };
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "Octuber", "November", "December"];
@@ -35,8 +35,9 @@ function App() {
     return ` ${day} ${date} ${month} ${year}`
   }
 
+
   return (
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp < 16) ? 'app warm' : 'app') : 'app'}>
+    <div className={(typeof weather.main != "undefined") ? (weather.weather[0].main === 'rain') ? 'app-rainy' : (weather.main.temp < 286) ? 'app-cold' : (weather.main.temp > 299 ? 'app-warm' : 'app') : 'app'}>
       <main className="search-box">
         <div>
           <input
@@ -55,13 +56,13 @@ function App() {
               <div className="date">{dateBuilder(new Date())}</div>
             </div>
             <div className="weather-box">
-              <div className="temp">{Math.round(weather.main.temp)} °C</div>
+              <div className="temp">{Math.round(weather.main.temp)} °K</div>
               <div className="weather">{weather.weather[0].main}</div>
             </div>
           </div>
         ) : ('')}
       </main>
-    </div>
+    </div >
   );
 }
 
