@@ -7,7 +7,7 @@ const api = {
   base: 'https://api.openweathermap.org/data/2.5/weather?q='
 }
 
-function App() {
+const App = () => {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
